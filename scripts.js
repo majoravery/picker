@@ -1,3 +1,7 @@
+/**
+ * Modify these variables to indiciate who last week's retro presenter was,
+ * and to exclude members if they are absent from the meeting.
+ */
 const PREVIOUS_PRESENTER = "Dhruv";
 const EXCLUDED_MEMBERS = ["Tumul", "Avery"];
 
