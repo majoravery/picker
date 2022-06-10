@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--color-white);
+    background-color: #070B13;
+    font-family: 'Rubik', sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+body.modal-open:after {
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+article {
+    display: flex;
+    height: 70vh;
+    padding: 16px;
+    width: 1200px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-size: 3em;
+    margin-bottom: 1em;
+    text-align: center;
+    width: 100%;
+}
+
+h1 + .faces {
+    margin-top: 24px;
+}
+
+.faces {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wrap p {
+    color: #ffffff;
+    font-size: 1em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+.face {
+    border-radius: 100%;
+    border: 8px solid transparent;
+    font-size: 0;
+    overflow: hidden;
+    padding: 8px;
+    position: relative;
+}
+
+.face.circled {
+    border: 8px solid #d70f64;
+}
+
+.face.previous:before,
+.face.excluded:before {
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.face.previous:after {
+    bottom: 0;
+    color: #ffffff;
+    content: 'LAST SPRINT\'S PRESENTER';
+    font-size: 14px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50px;
+    width: 100%;
+    z-index: 1;
+}
+
+.face img {
+    border-radius: 100%;
+    height: 120px;
+    width: 120px;
+}
+
+
+.faces + button.whos-next {
+    margin-top: 72px;
+}
+
+button.whos-next {
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.7em;
+    padding: 16px 24px;
+}
+
+.modal-wrap {
+    align-items: center;
+    bottom: 0;
+    display: none;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+body.modal-open .modal-wrap {
+    display: flex;
+}
+
+.modal {
+    background: #ffffff;
+    border-radius: 24px;
+    margin: auto;
+    padding: 36px 48px;
+    text-align: center;
+    transition: transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    transform: scale(0%);
+    width: 500px;
+    z-index: 5;
+}
+body.modal-open .modal {
+    transform: scale(100%);
+}
+
+.modal-span {
+    color: #000000;
+}
+
+.modal-image {
+    border-radius: 100%;
+    height: 200px;
+    margin: 24px;
+    width: 200px;
+}
+
+.modal-button {
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1em;
+    margin-top: 24px;
+    padding: 8px 16px;
+}
