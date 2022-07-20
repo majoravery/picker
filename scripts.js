@@ -1,9 +1,16 @@
 /**
- * Modify these variables to indiciate who last week's retro presenter was,
- * and to exclude members if they are absent from the meeting.
+ * Specify which member was the previous retro's presenter and which members are
+ * excluded from this retro (on vacation, sick etc).
+ *
+ * Please capitalise the first letter of the name!
+ *
+ * Example usage: https://majoravery.github.io/panda-ads-retro-picker?previous=Adiba&excluded=Vinh,Jimmy
  */
-const PREVIOUS_PRESENTER = "Dhruv";
-const EXCLUDED_MEMBERS = ["Tumul", "Avery"];
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+const PREVIOUS_PRESENTER = params.previous;
+const EXCLUDED_MEMBERS = params.excluded?.split(",") || [];
 
 const TEAM_MEMBERS = [
   {
@@ -37,9 +44,9 @@ const TEAM_MEMBERS = [
       "https://ca.slack-edge.com/T052P4KCD-U02TYL2MFT2-682a7e2c7903-512",
   },
   {
-    name: "Dhruv",
+    name: "Drishti",
     imageUrl:
-      "https://ca.slack-edge.com/T052P4KCD-U019V8TRSKU-2b2dcde55d67-512",
+      "https://ca.slack-edge.com/T052P4KCD-U01DJF1MJUQ-be1b7392b385-512",
   },
   {
     name: "Duy",
@@ -66,6 +73,16 @@ const TEAM_MEMBERS = [
       "https://ca.slack-edge.com/T052P4KCD-U034S8KT51B-53fd716a0f5f-512",
   },
   {
+    name: "Prince",
+    imageUrl:
+      "https://ca.slack-edge.com/T052P4KCD-U031S4NSZRT-755be2899a72-512",
+  },
+  {
+    name: "Tri",
+    imageUrl:
+      "https://ca.slack-edge.com/T052P4KCD-U02PH4JH0HW-755f758bb9e4-512",
+  },
+  {
     name: "Tumul",
     imageUrl:
       "https://ca.slack-edge.com/T052P4KCD-U02HF4LPLS3-cfba8b14f0c5-512",
@@ -74,6 +91,11 @@ const TEAM_MEMBERS = [
     name: "Vinh",
     imageUrl:
       "https://ca.slack-edge.com/T052P4KCD-U012LJB4KLN-756ea9eb8ddc-512",
+  },
+  {
+    name: "Xuan Yu",
+    imageUrl:
+      "https://ca.slack-edge.com/T052P4KCD-U03N8LVBREY-c406c91e16ea-512",
   },
 ];
 

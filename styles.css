@@ -50,13 +50,23 @@ section {
 h1 {
     color: #FFFFFF;
     font-size: 3em;
-    margin-bottom: 1em;
+    margin-bottom: 0.25em;
     text-align: center;
     width: 100%;
 }
 
 h1 + .faces {
     margin-top: 24px;
+}
+
+.instructions {
+    color: #eeeeee;
+    font-size: 1em;
+    margin-bottom: 3em;
+}
+
+.instructions span {
+    color: #d70f64;
 }
 
 .faces {
